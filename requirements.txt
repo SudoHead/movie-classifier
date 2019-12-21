@@ -1,0 +1,5 @@
+tensorflow-gpu 
+cudatoolkit
+nltk
+inflect
+gensim
