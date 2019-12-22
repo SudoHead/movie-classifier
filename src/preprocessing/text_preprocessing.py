@@ -6,8 +6,6 @@ from nltk.corpus import wordnet
 from nltk.corpus import stopwords
 import inflect
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 def process_text(text):
     """Applies text processing techniques to the raw input text, which includes: 

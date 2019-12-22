@@ -21,7 +21,6 @@ def get_arg_parser():
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('-s', '--savepath', default=DEFAULT_SAVE_PATH, help="specify where to save the processed data", action='store_true')
-
     parser.add_argument('-f', '--filepath', default=DEFAULT_LOAD_PATH, help='filepath of the raw data')
     return parser
 

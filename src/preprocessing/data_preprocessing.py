@@ -5,8 +5,6 @@ import nltk
 import inflect
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 def load_data(file_path):
     """Loads the data from the file path as a pandas dataframe without further processing.
