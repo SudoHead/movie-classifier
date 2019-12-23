@@ -11,7 +11,8 @@ from movieclassifier.model.OvRModel import OvRModel
 from movieclassifier.preprocessing.data_preprocessing import load_data
 from movieclassifier.preprocessing.text_preprocessing import process_text
 
-PROJECT_ROOT = str(Path(os.getcwd()).parent)
+THIS_PATH = os.path.dirname(os.path.realpath(__file__))
+PROJECT_ROOT = str(Path(THIS_PATH).parent)
 DEFAULT_LOAD_PATH = PROJECT_ROOT + '/data/movies_data_ready.csv'
 DEFAULT_SAVE_PATH = PROJECT_ROOT + '/models/model.hal'
 OVR = 'Ovr'
