@@ -41,6 +41,12 @@ The ```requirements.txt``` file lists all the required libraries, to install the
 pip install -r requirements.txt
 ```
 
+Download the nltk corpus:
+```
+python install_nltk_corpus.py
+```
+
+
 Run the ```setup.py``` to install the packages:
 
 ```
