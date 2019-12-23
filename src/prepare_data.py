@@ -1,13 +1,11 @@
-import sys
 import os
-sys.path.append('./preprocessing')
 
 import argparse
 from pathlib import Path
 from tqdm import tqdm
 import nltk
-from preprocessing.data_preprocessing import process_data, load_data, save_data
-from preprocessing.text_preprocessing import process_text
+from movieclassifier.preprocessing.data_preprocessing import process_data, load_data, save_data
+from movieclassifier.preprocessing.text_preprocessing import process_text
 
 PROJECT_ROOT = str(Path(os.getcwd()).parent)
 DEFAULT_LOAD_PATH = PROJECT_ROOT + '/data/movies_metadata.csv'
@@ -20,7 +18,7 @@ def get_arg_parser():
         arg_parser: the argument parser
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('-s', '--savepath', default=DEFAULT_SAVE_PATH, help="specify where to save the processed data", action='store_true')
+    parser.add_argument('-s', '--savepath', default=DEFAULT_SAVE_PATH, help="specify where to save the processed data")
     parser.add_argument('-f', '--filepath', default=DEFAULT_LOAD_PATH, help='filepath of the raw data')
     return parser
 
@@ -57,12 +55,6 @@ if __name__ == "__main__":
         exit()
 
     print("Using the following dataset: ", path_load)
-
-    # Download required nltk files
-    nltk.download('punkt')
-    nltk.download('wordnet')
-    nltk.download('averaged_perceptron_tagger')
-    nltk.download('stopwords')
 
     # Creates a new tqdm instance with pandas
     tqdm.pandas()

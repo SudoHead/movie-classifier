@@ -1,5 +1,3 @@
-tensorflow-gpu 
-cudatoolkit
+beautifultable
 nltk
 inflect
-gensim
