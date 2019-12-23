@@ -12,7 +12,7 @@ Multi-label classification problem involving prediction of a movie's genres give
 
 The aim of this project is to build a ML system capable of assigning a set of label tags based on a name and a natural language text. Since a movie can have multiple genres ([Action, Comedy, Drama]), we cannot threat the problem as a multi-class classification problem. Instead, we can simplify it by generalising the problem to multiple binary classifications: commonly known as the one-vs-rest approach.
 
-The scikit-learn library has been chosen for this project because it enables quick prototyping by offering a wide range of ML algorithms and a easy to use API. In particular, the model implemented (**OvRModel**) is a wrapper of the **sklearn.multiclass.OneVsRestClassifier** strategy. The advantage of this method is that it can use any type of classifier that inherits the sklearn's **BaseEstimator** class.
+The scikit-learn library has been chosen for this project because it enables quick prototyping by offering a wide range of ML algorithms and a easy to use API. In particular, the implemented model (**OvRModel**) is a wrapper of the **sklearn.multiclass.OneVsRestClassifier** strategy. The advantage of this method is that it can use any type of classifier that inherits the sklearn's **BaseEstimator** class.
 
 Furthermore, special attention has been given to the extendibility of the project: the use of an abstract class for the Model makes the integration of future ML algorithms a very straightforward task.
 
