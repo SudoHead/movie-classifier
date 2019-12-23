@@ -63,10 +63,10 @@ docker image build -t pylearn .
 
 Then run the container using:
 ```
-docker run -it --name movie-classifier-app pylearn
+docker run -it -v $pwd'':/home/jovyan/work --name movie-classifier-app pylearn
 ```
 
-Note: add ```-p 8888:8888``` and ```-v $pwd'':/home/jovyan/work``` if you want to run jupyter notebooks and mount the volume for persistency.
+Note: add ```-p 8888:8888``` if you want to run jupyter notebooks.
 
 ## Usage
 
