@@ -5,7 +5,8 @@ import json
 from movieclassifier.model.Model import Model
 import time
 
-PROJECT_ROOT = str(Path(os.getcwd()).parent)
+THIS_PATH = os.path.dirname(os.path.realpath(__file__))
+PROJECT_ROOT = str(Path(THIS_PATH).parent)
 DEFAULT_MODEL = PROJECT_ROOT + '/models/model.hal'
 
 def get_arg_parser():
