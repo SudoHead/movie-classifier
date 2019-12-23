@@ -70,7 +70,7 @@ The following commands assumes that the current directory is ```/src```.
 
 Run the script ```movie_classifier.py``` to make predictions:
 ```
-python movie_classifier.py --title "The Shawshank Redemption" --description "In 1947 Portland, Maine, banker Andy Dufresne is convicted of murdering his wife and her lover and is sentenced to two consecutive life sentences at the Shawshank State Penitentiary. He is befriended by Ellis "Red" Redding, an inmate and prison contraband smuggler serving a life sentence."
+python movie_classifier.py --title "The Shawshank Redemption" --description "In 1947 Portland, Maine, banker Andy Dufresne is convicted of murdering his wife and her lover and is sentenced to two consecutive life sentences at the Shawshank State Penitentiary. He is befriended by Ellis Red Redding, an inmate and prison contraband smuggler serving a life sentence."
 ```
 
 ### Data preprocessing
