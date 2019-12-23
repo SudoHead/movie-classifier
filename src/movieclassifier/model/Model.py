@@ -84,10 +84,11 @@ class Model(ABC):
     def get_stats(self, x_test, y_test):
         ypred = self.predict(x_test)
         
-        # avg_prec = metrics.average_precision_score(y_test, ypred)
-        # f1 = metrics.f1_score(y_test, ypred)
+        prec, recall, f1, _ = metrics.precision_recall_fscore_support(y_test, ypred, average='micro')
 
         perf_metrics = {}
-        # perf_metrics['average precision score'] = avg_prec
+        perf_metrics['Precision'] = prec
+        perf_metrics['Recall'] = recall
+        perf_metrics['F1 score'] = f1
 
         return perf_metrics

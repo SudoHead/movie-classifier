@@ -10,6 +10,7 @@ from movieclassifier.model.Model import Model
 from movieclassifier.model.OvRModel import OvRModel
 from movieclassifier.preprocessing.data_preprocessing import load_data
 from movieclassifier.preprocessing.text_preprocessing import process_text
+from beautifultable import BeautifulTable
 
 THIS_PATH = os.path.dirname(os.path.realpath(__file__))
 PROJECT_ROOT = str(Path(THIS_PATH).parent)
@@ -53,6 +54,12 @@ def split_train_val_test(self, X, y, test_val_size=0.15, random_seed=42):
                 test_size=validation_size_relative, random_state=random_seed)
         return x_train, x_val, x_test, y_train, y_val, y_test
 
+def print_stats_table(stats):
+    table = BeautifulTable()
+    table.column_headers = list(stats.keys())
+    table.append_row(stats.values())
+    print('\n', table, end='\n')
+
 if __name__ == "__main__":
     argparser = get_arg_parser()
     args = vars(argparser.parse_args())
@@ -75,7 +82,7 @@ if __name__ == "__main__":
 
     # train the OvR model
     if args['model'] == OVR:
-        base_classifier = LogisticRegression(solver='saga', n_jobs=1, max_iter=100, verbose=True)
+        base_classifier = LogisticRegression(solver='saga', n_jobs=1, max_iter=1000, verbose=True)
         model = OvRModel(base_classifier, threshold=0.3)
         model.fit(X, y)
 
@@ -86,9 +93,10 @@ if __name__ == "__main__":
 
 
     # Only calculate stats if there is some test data
-    if args['testsize'] >= 0.01:
-        stats = model.get_stats(x_test, y_test)
-        print(stats)
+    if args['testsize'] > 0.01:
+        # stats = model.get_stats(x_test, y_test)
+        # print_stats_table(stats)
+        pass
     
     # Save the model as file
     model.save(args['savepath'])

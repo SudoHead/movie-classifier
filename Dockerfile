@@ -12,7 +12,7 @@ RUN python install_nltk_corpus.py
 
 COPY . .
 
-RUN python setup.py install
+RUN pip install .
 
 # Run a bash terminal when the containers is run
 CMD bash
