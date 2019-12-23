@@ -70,7 +70,7 @@ Note: add ```-p 8888:8888``` and ```-v $pwd'':/home/jovyan/work``` if you want t
 
 ## Usage
 
-The following commands assumes that the current directory is ```/src```.
+The following commands assumes that the current directory is **```/src```**.
 
 ### Inference
 
