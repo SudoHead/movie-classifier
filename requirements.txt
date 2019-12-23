@@ -3,3 +3,4 @@ pandas
 beautifultable
 nltk
 inflect
+tqdm
