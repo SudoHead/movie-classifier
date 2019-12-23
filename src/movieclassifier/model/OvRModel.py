@@ -15,8 +15,7 @@ class OvRModel(Model):
     def fit(self, X, y):
         if not self.test_mode:
             # transform target variables
-            self.binarizer.fit(y)
-            y = self.binarizer.transform(y)
+            y = self.binarizer.fit_transform(y)
 
             # transform text to vector
             X = self.vectorizer.fit_transform(X.values.astype('U'))
@@ -34,9 +33,8 @@ class OvRModel(Model):
 
         # Apply threshold to prediction if supported by the estimator
         if self.support_proba:
-            y_pred = self.clf.predict_proba(X)
+            y_pred = self.clf.predict(X)
             y_pred = np.where(y_pred >= self.threshold, 1, 0)
         else:
             y_pred = self.clf.predict(X)
-
         return y_pred

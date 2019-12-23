@@ -55,10 +55,16 @@ def split_train_val_test(self, X, y, test_val_size=0.15, random_seed=42):
         return x_train, x_val, x_test, y_train, y_val, y_test
 
 def print_stats_table(stats):
+    """Prints a table of stats about the model.
+    
+    Arguments:
+        stats {dict} -- name value map
+    """
     table = BeautifulTable()
+    table.set_style(BeautifulTable.STYLE_BOX_ROUNDED)
     table.column_headers = list(stats.keys())
     table.append_row(stats.values())
-    print('\n', table, end='\n')
+    print('\n', table, end='\n', sep='')
 
 if __name__ == "__main__":
     argparser = get_arg_parser()
@@ -91,12 +97,10 @@ if __name__ == "__main__":
     if model == None:
         raise ValueError("No such model:", args['model'])
 
-
     # Only calculate stats if there is some test data
     if args['testsize'] > 0.01:
-        # stats = model.get_stats(x_test, y_test)
-        # print_stats_table(stats)
-        pass
+        stats = model.get_stats(x_test, y_test)
+        print_stats_table(stats)
     
     # Save the model as file
     model.save(args['savepath'])

@@ -82,13 +82,24 @@ class Model(ABC):
         return model
 
     def get_stats(self, x_test, y_test):
-        ypred = self.predict(x_test)
+        """Calculates the metrics of the model using the test set.
         
+        Arguments:
+            x_test {ndarray} -- arary of unprocessed text
+            y_test {ndarray} -- array of raw labels
+        
+        Returns:
+            dict -- values for corresponding metrics
+        """
+        # binarize labels and get predictions
+        y_test = self.binarizer.transform(y_test)
+        ypred = self.predict(x_test)
+
         prec, recall, f1, _ = metrics.precision_recall_fscore_support(y_test, ypred, average='micro')
 
         perf_metrics = {}
         perf_metrics['Precision'] = prec
         perf_metrics['Recall'] = recall
         perf_metrics['F1 score'] = f1
-
         return perf_metrics
+        
