@@ -31,7 +31,7 @@ The base estimator used in this project is the logistic regression, which achiev
 
 | Precision | Recall | F1-score |
 |-----------|--------|----------|
-| 0.557     | 0.626  | 0.589    |
+| 0.85      | 0.453  | 0.591    |
 
 ## Installation
 
