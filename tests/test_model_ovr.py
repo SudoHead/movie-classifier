@@ -29,11 +29,13 @@ class TestModelOvR(unittest.TestCase):
 
     def test_trained_model(self):
         mod = Model.load(OVR_MODEL_PATH)
-        title = 'Othello'
-        desc = "The evil Iago pretends to be friend of Othello in order to manipulate him \
-            to serve his own end in the film version of this Shakespeare classic."
+        title = 'Alien: Covenant'
+        desc = "Bound for a remote planet on the far side of the galaxy, the crew of the colony \
+            ship 'Covenant' discovers what is thought to be an uncharted paradise, but is \
+            actually a dark, dangerous world â€“ which has its sole inhabitant the 'synthetic', \
+            David, survivor of the doomed Prometheus expedition."
         labels = mod.predict_single(title, desc)
-        self.assertIn('Drama', labels)
+        self.assertIn('Horror', labels)
 
     def test_model_predict(self):
         ypred = self.model.predict(self.x_test)

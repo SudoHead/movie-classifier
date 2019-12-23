@@ -14,10 +14,7 @@ class Model(ABC):
         """Base constructor
         """
         self.binarizer = MultiLabelBinarizer()
-        self.vectorizer = TfidfVectorizer(min_df=0.00009,\
-            max_features=20000,\
-            stop_words='english',\
-            ngram_range=(1,3))
+        self.vectorizer = TfidfVectorizer(max_df=0.8, max_features=100000)
         self.clf = None
 
     @abstractmethod

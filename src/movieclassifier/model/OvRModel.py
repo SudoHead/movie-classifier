@@ -33,7 +33,7 @@ class OvRModel(Model):
 
         # Apply threshold to prediction if supported by the estimator
         if self.support_proba:
-            y_pred = self.clf.predict(X)
+            y_pred = self.clf.predict_proba(X)
             y_pred = np.where(y_pred >= self.threshold, 1, 0)
         else:
             y_pred = self.clf.predict(X)
