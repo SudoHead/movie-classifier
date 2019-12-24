@@ -27,7 +27,7 @@ In order to transform the raw text data into useful features, we must apply a se
 
 Then the TF-IDF algorithm is used to vectorize the transformed text, obtaining a feature vector that can be used to train the model.
 
-The base estimator used in this project is the logistic regression, which achieves the following results using a threshold value of 0.2:
+The base estimator used in this project is the logistic regression, which achieves the following results (micro average) using a threshold value of 0.2:
 
 | Precision | Recall | F1-score |
 |-----------|--------|----------|
