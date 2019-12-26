@@ -99,8 +99,8 @@ Note: use -f "PATH" to specify the cleaned dataset, -s "PATH" to indicate where 
 
 ## Testing (unittest)
 
-You can run the unittests from the ```/tests``` direcotory using:
+You can run the unittests from the project root direcotory using:
 
 ```
-python -m unittest test_*.py
+python -m unittest tests/test_*
 ```
